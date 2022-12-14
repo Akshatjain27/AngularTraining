@@ -1,0 +1,22 @@
+h1{
+    font-family: Georgia;
+    color: blue;
+    background-color: lightgrey;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 0.5em;
+    size: 24px;
+
+}
+h2{
+    font-family: Georgia;
+    color: brown;
+    font-weight: bold;
+    text-align: left;
+    letter-spacing: 0.2em;
+    size: 18px;
+
+}
+.years{
+    font-weight: bold;
+}
