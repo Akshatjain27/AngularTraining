@@ -1,0 +1,23 @@
+<marquee><h1>Welcome to yash</h1></marquee>
+<br>
+<h2>hope everthing will be all right
+</h2>
+<app-success-alert></app-success-alert>
+<app-warning-alert></app-warning-alert>
+<label>Passing the data using event binding</label>
+<input type="text" class="form-control" [(ngModel)]='username'>
+<p>{{username}}</p>
+<button type="button" class="btn btn-success" (click)="reset()" [disabled]="!username">Reset number</button>
+
+<button class="button" (click)="buttonclick()">Display details </button>
+
+<p *ngIf="count%2!=0"> Your Name = Akshat jain</p>
+
+<div *ngFor="let n of NewArray">
+
+    <p *ngIf="n<5" [ngStyle]="{'background-color':'white'}">{{n}}</p>
+
+    <p *ngIf="n>=5" [ngStyle]="{'background-color':'blue'}">{{n}}</p>
+
+</div>
+
