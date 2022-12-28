@@ -1,0 +1,22 @@
+<table class="table table-hover table-striped table-bordered">
+    <thead class="table-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Basic</th>
+        <th scope="col">DeptNo</th> 
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let e of employeeList">
+        <td>{{e.empNo}}</td>
+        <td>{{e.name}}</td>
+        <td>{{e.basic}}</td>
+        <td>{{e.deptNo}}</td>
+        <td><button class="btn btn-info" (click)="onUpdate(e)">edit</button></td>
+        <td><button class="btn btn-info"(click)="onDelete(e.empNo)">delete</button></td>
+      </tr>
+    </tbody>
+  </table>
