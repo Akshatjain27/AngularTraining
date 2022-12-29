@@ -9,7 +9,7 @@
                 </div>
             </div>
             <div class="col-md-6">
-                <input type="text" class="form-control" formControlName="name" placeholder="name" aria-label="name" aria-describedby="basic-addon1" [pattern]="namepattern" [(ngModel)]="obj.name">{{obj.name}}
+                <input type="text" class="form-control" formControlName="name" placeholder="name" aria-label="name" aria-describedby="basic-addon1" [pattern]="namepattern" [(ngModel)]="obj.name">
                 <div style="color: red;" *ngIf="employeeform.controls['name'].touched && employeeform.controls['name'].invalid">
                     <span *ngIf="employeeform.controls['name'].hasError('required')">name is required</span>
                     <span *ngIf="employeeform.controls['name'].hasError('pattern')">only alphabate with

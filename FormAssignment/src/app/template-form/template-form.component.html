@@ -1,0 +1,50 @@
+<form  [formGroup]="registeruser" (ngSubmit)="onsubmit()">
+    <div>
+      <label for="email">Email:</label>
+      <input type="text" name="email" formControlName="email" [pattern]="emailpattern" required>
+      <div *ngIf="registeruser.controls['email'].touched && registeruser.controls['email'].invalid">
+        <span *ngIf="registeruser.controls['email'].hasError('required')">email is required</span>
+        <span *ngIf="registeruser.controls['email'].hasError('pattern')">inavlid email</span>
+    </div>
+      <br>
+      <br>
+    
+      <label for="subscription"><b>Choose a Subcription:</b></label>
+      <select formControlName="subscription">    
+        <option value="Basic">Basic</option>
+        <option value="Advance">Advance</option>
+        <option value="Pro">Pro</option>
+      </select> 
+      <br>
+      <br>
+    
+        <label for="password">Password:</label>
+        <input type="password" placeholder="Password" formControlName="password" required>
+        <div *ngIf="registeruser.controls['password'].touched && registeruser.controls['password'].invalid">
+          <span *ngIf="registeruser.controls['password'].hasError('required')">Password is required</span>
+       </div>
+      <br>
+      <br>
+      <div>
+        <input type="submit" value="submit">
+        <br>
+        <br>
+      </div>
+       
+    </div>
+    </form>
+    <table style="border: 1px solid gray;">
+    <tbody>
+      <tr>
+        <th><b>Email</b></th>&nbsp;
+        <th><b>Subcriptions</b></th>&nbsp;
+        <th><b>Password</b></th>
+      </tr>
+      <tr *ngFor="let i of emparr" >
+        <td>{{i.mail}}</td>&nbsp;
+        <td>{{i.subscription}}</td>&nbsp;
+        <td>{{i.password}}</td>
+      </tr>
+    </tbody>
+    </table>
+    <br>

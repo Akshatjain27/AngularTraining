@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { employee } from '../model/employee';
 import {HttpClient} from '@angular/common/http'
 
@@ -7,9 +7,14 @@ import {HttpClient} from '@angular/common/http'
   providedIn: 'root'
 })
 export class ServiceService {
+
   constructor(private http : HttpClient) { }
+
   url:string="http://localhost:5000/api/Employees";
   e:employee= new employee();
+  private eventCallback = new Subject<employee>(); // Source
+  eventCallback$ = this.eventCallback.asObservable();
+
   getAllData(): Observable<any> 
   {
     console.log('GET Employee', this.http.get(this.url));
@@ -29,10 +34,16 @@ export class ServiceService {
 
   updateData(data: any): Observable<any> 
   {
-    return this.http.put(`${this.url}/${data.empId}`, data)
+    console.log('update', data);
+    return this.http.put(`${this.url}/${data.empNo}`, data)
   }
 
   deleteData(empId: number): Observable<any>{
       return this.http.delete<any>(`${this.url}/${empId}`)
+  }
+
+  onEditClicked(emp: employee) {
+    console.log('service', emp);
+    this.eventCallback.next(emp);
   }
 }
