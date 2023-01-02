@@ -4,7 +4,7 @@
             <div class="col-md-6">
                 <input type="number" class="form-control" formControlName="empNo" placeholder="empNo" aria-label="empNo" aria-describedby="basic-addon1" [(ngModel)]="obj.empNo">
                 <div style="color: red;" *ngIf="employeeform.controls['empNo'].touched && employeeform.controls['empNo'].invalid">
-                    <span *ngIf="employeeform.controls['empNo'].hasError('required')">name is required</span>
+                    <span *ngIf="employeeform.controls['empNo'].hasError('required')">empNo is required</span>
                  
                 </div>
             </div>
@@ -32,7 +32,7 @@
             <div class="col-md-12">
                 <input type="number" class="form-control" formControlName="DeptNo" placeholder="DeptNo" aria-label="DeptNo" aria-describedby="basic-addon2" [(ngModel)]="obj.deptNo" required>
                 <div style="color: red;" *ngIf="employeeform.controls['DeptNo'].touched && employeeform.controls['DeptNo'].invalid">
-                    <span *ngIf="employeeform.controls['DeptNo'].hasError('required')">mobile no is required</span>
+                    <span *ngIf="employeeform.controls['DeptNo'].hasError('required')">Dept no is required</span>
                 </div>
             </div>
         </div>
