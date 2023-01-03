@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import {FormControl, Validators} from '@angular/forms';
 
 import { User } from '../model/user';
+import { ServiceService } from '../service/service.service';
 
 interface Skills {
   value: string;
@@ -15,12 +16,12 @@ interface Skills {
 })
 
 export class RegistrationComponent implements OnInit{
-
+  constructor(private fb:FormBuilder,public service:ServiceService){}
   user:User = new User();
   hide=true;
   registrationform!:FormGroup;
-  constructor(private fb:FormBuilder){}
-  mobilepattern= /[0-9\+\-\ ]/;
+ 
+  mobilepattern= /^[6789][0-9]{9}$/;
   emailpattern = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/;
   namepattern = /^[a-zA-Z ]{6,32}$/;
   userNamepattern = /^[a-z][a-z0-9]{5,20}$/;
@@ -34,7 +35,7 @@ export class RegistrationComponent implements OnInit{
     ({
       name:['',[Validators.required,Validators.pattern(this.namepattern)]],
       emailId:['',[Validators.required,Validators.pattern(this.emailpattern)]],
-      userName:['',[Validators.required,,Validators.pattern(this.userNamepattern)]],
+      userName:['',[Validators.required,Validators.pattern(this.userNamepattern)]],
       password:['',[Validators.required]],
       gender:['',[Validators.required]],
       dob:['',[Validators.required]],
@@ -44,6 +45,14 @@ export class RegistrationComponent implements OnInit{
   }
 
   onSubmit(user:User){
+    console.log(this.registrationform.value);
+    if(this.registrationform.valid){
+      this.service.postData(this.registrationform.value)
+    .subscribe(response => {
+        console.log(response)});
+    }
+    
+    // this.service.postData(this.registrationform.value).subscribe();
     
   }
 

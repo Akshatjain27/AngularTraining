@@ -1,0 +1,58 @@
+{
+  "posts": [
+    {
+      "name": "akshat",
+      "emailId": "a@GMAIL.COM",
+      "userName": "",
+      "password": "1234",
+      "gender": "",
+      "dob": "",
+      "mobNo": "9876543212",
+      "skills": "",
+      "id": 1
+    },
+    {
+      "name": "Divya Vyas",
+      "emailId": "divya@gmail.com",
+      "userName": "",
+      "password": "123456789",
+      "gender": "female",
+      "dob": "2000-12-04T18:30:00.000Z",
+      "mobNo": "9876543210",
+      "skills": "Advanced-2",
+      "id": 2
+    },
+    {
+      "name": "Divya Vyas",
+      "emailId": "divya@gmail.com",
+      "userName": "divya123",
+      "password": "qwertyuiop",
+      "gender": "female",
+      "dob": "2000-12-04T18:30:00.000Z",
+      "mobNo": "9876543210",
+      "skills": "Basic-0",
+      "id": 3
+    },
+    {
+      "name": "Divya Vyas",
+      "emailId": "divya@gmail.com",
+      "userName": "divya123",
+      "password": "123456789",
+      "gender": "female",
+      "dob": "2000-12-04T18:30:00.000Z",
+      "mobNo": "9876543223",
+      "skills": "Intermediate-1",
+      "id": 4
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
