@@ -1,23 +1,18 @@
 <mat-sidenav-container fullscreen>
   <mat-sidenav #sidenav>
     <mat-nav-list (click)="sidenav.close()">
-      <a mat-list-item  routerLink="register">
+      <a mat-list-item>
         <mat-icon>person_add</mat-icon>
 
-        <span>Register</span>
+        <span>All Courses</span>
       </a>
 
-      <a mat-list-item  routerLink="login">
+      <a mat-list-item>
         <mat-icon>account_circle</mat-icon>
 
-        <span>Login</span>
+        <span>Add Course</span>
       </a>
 
-      <a mat-list-item  routerLink="about">
-        <mat-icon>question_answer</mat-icon>
-
-        <span>About</span>
-      </a>
     </mat-nav-list>
   </mat-sidenav>
 
@@ -26,14 +21,6 @@
     <button mat-icon-button (click)="sidenav.open()">
       <mat-icon>menu</mat-icon>
     </button>
-
-    <a mat-button [matMenuTriggerFor]="dropdown"> drop </a>
-
-    <mat-menu #dropdown>
-      <button mat-menu-item routerLink="/">Courses</button>
-
-      <button mat-menu-item routerLink="about">About</button>
-    </mat-menu>
 
     <a mat-button routerLink="register">
       <mat-icon>person_add</mat-icon>
@@ -46,14 +33,17 @@
 
       Login
     </a>
-    <span class="example-fill-remaining-space"></span>
-    <span class="align-center"></span>
-    <span class="example-spacer"></span>
-    <button mat-button>About</button>
-    <button mat-button>Contact</button>
+    
+    <a mat-button [matMenuTriggerFor]="dropdown"> About Us </a>
+
+    <mat-menu #dropdown>
+      <button mat-menu-item routerLink="about">CEO</button>
+
+      <button mat-menu-item routerLink="/">Contact Us</button>
+    </mat-menu>
+
     </mat-toolbar-row>
   </mat-toolbar>
   
 <router-outlet></router-outlet>
 </mat-sidenav-container>
-

@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -12,9 +13,13 @@ export class LoginComponent {
     password: new FormControl(''),
   });
 
+  constructor(private router:Router) {
+
+    }
+
   submit() {
     if (this.loginform.valid) {
-      this.submitEM.emit(this.loginform.value);
+      this.router.navigate(['/home']);
     }
   }
   @Input() error!: string | null;

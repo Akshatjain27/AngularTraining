@@ -1,1 +1,414 @@
-<p>dashboard works!</p>
+<mat-horizontal-stepper linear>
+  <mat-step [stepControl]="basicFormGroup">
+    <form [formGroup]="basicFormGroup" (ngSubmit)="onSubmit()">
+      <div class="example-container">
+        <div class="row">
+          <div class="col-25">
+            <ng-template matStepLabel>Basic Information</ng-template>
+          </div>
+
+          <br />
+
+          <mat-form-field>
+            <mat-icon matPrefix>contacts icon</mat-icon
+            ><mat-label>Full Name </mat-label>
+
+            <input
+              matInput
+              placeholder="Name"
+              formControlName="fullname"
+              required
+              minlength="6 characters"
+              maxlength="32 characters"
+            />
+
+            <mat-error>Minimum 6 and maximum 32 characters only</mat-error>
+          </mat-form-field>
+
+          <div class="row">
+            <div class="col-75">
+              <mat-form-field>
+                <mat-icon matPrefix>email</mat-icon><mat-label>Email</mat-label>
+
+                <input
+                  matInput
+                  placeholder="Email"
+                  formControlName="email"
+                  required
+                />
+              </mat-form-field>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-75">
+              <mat-form-field>
+                <mat-icon matPrefix>boy</mat-icon
+                ><mat-label>Father's Name</mat-label>
+
+                <input
+                  matInput
+                  placeholder="Father's Name"
+                  formControlName="fathername"
+                  required
+                  minlength="6 characters"
+                  maxlength="32 characters"
+                />
+
+                <mat-error>Minimum 6 and maximum 32 characters only</mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-75">
+              <mat-form-field>
+                <mat-icon matPrefix>girl</mat-icon
+                ><mat-label>Mother's Name</mat-label>
+
+                <input
+                  matInput
+                  placeholder="Mother's Name"
+                  formControlName="mothername"
+                  required
+                  minlength="6 characters"
+                  maxlength="32 characters"
+                />
+
+                <mat-error>Minimum 6 and maximum 32 characters only</mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-45"></div>
+
+            <mat-radio-group formControlName="gender">
+              <mat-radio-button value="male"
+                >Male<mat-icon>male</mat-icon></mat-radio-button
+              >
+
+              <mat-radio-button value="female"
+                >Female<mat-icon>female</mat-icon></mat-radio-button
+              >
+
+              <mat-radio-button value="other"
+                >Other<mat-icon>transgender</mat-icon></mat-radio-button
+              >
+            </mat-radio-group>
+          </div>
+
+          <div class="row">
+            <div class="col-25"></div>
+
+            <div class="col-35">
+              <input
+                matInput
+                type="date"
+                style="
+                  height: 4em;
+                  width: 18em;
+                  text-align: center;
+                  margin-right: 485px;
+                "
+                formControlName="dob"
+                required
+              />
+            </div>
+          </div>
+
+          <br />
+
+          <br />
+
+          <br />
+
+          <br />
+
+          <mat-form-field>
+            <mat-label>Mobile No.</mat-label>
+
+            <mat-icon matPrefix>smartphone</mat-icon>
+
+            <input
+              matInput
+              placeholder="Mobile No."
+              formControlName="mobile"
+              required
+            />
+
+            <mat-error> Only 10 digits </mat-error>
+          </mat-form-field>
+
+          <br />
+
+          <br />
+
+          <button
+            class="primary"
+            style="background-color: rgb(81, 79, 79); width: 100%"
+            onclick="alert('Are you sure you want to move to Step-2')"
+            mat-button
+            matStepperNext
+          >
+            Next
+          </button>
+        </div>
+      </div>
+    </form>
+  </mat-step>
+
+  <mat-step [stepControl]="bankFormGroup" optional (ngSubmit)="onSubmit()">
+    <form [formGroup]="bankFormGroup">
+      <div class="container2">
+        <div class="row">
+          <ng-template matStepLabel>Bank Details</ng-template>
+
+          <br />
+
+          <mat-form-field>
+            <mat-label>Full Name</mat-label>
+
+            <mat-icon matPrefix>people</mat-icon>
+
+            <input
+              matInput
+              placeholder="fullname"
+              formControlName="fullname"
+              required
+              minlength="6 characters"
+              maxlength="32 characters"
+            />
+
+            <mat-error>Minimum 6 and maximum 32 characters only</mat-error>
+          </mat-form-field>
+
+          <br />
+
+          <mat-form-field>
+            <mat-label>Bank Account No.</mat-label>
+
+            <mat-icon matPrefix>account_circle</mat-icon>
+
+            <input
+              matInput
+              placeholder="Bank Account No."
+              formControlName="Accno"
+              required
+            />
+
+            <mat-error>Only Numbers</mat-error>
+          </mat-form-field>
+
+          <br />
+
+          <mat-form-field>
+            <mat-label>Bank Name</mat-label>
+
+            <mat-icon matPrefix>account_balance</mat-icon>
+
+            <input
+              matInput
+              placeholder="Bank Name"
+              formControlName="bankname"
+              required
+            />
+          </mat-form-field>
+
+          <br />
+
+          <mat-form-field>
+            <mat-label>IFSC Code</mat-label>
+
+            <mat-icon matPrefix>account_balance_wallet</mat-icon>
+
+            <input
+              matInput
+              placeholder="IFSC Code"
+              formControlName="ifsc"
+              required
+            />
+          </mat-form-field>
+
+          <br />
+
+          <mat-radio-group formControlName="ib">
+            <mat-label>You Have Internet Banking</mat-label>
+
+            <br />
+
+            <mat-radio-button value="yes"
+              ><mat-icon>check</mat-icon></mat-radio-button
+            >
+
+            <mat-radio-button value="No"
+              ><mat-icon>cancel</mat-icon></mat-radio-button
+            >
+          </mat-radio-group>
+
+          <br />
+
+          <br />
+
+          <mat-radio-group formControlName="mb">
+            <mat-label>You Have Mobile Banking</mat-label>
+
+            <br />
+
+            <mat-radio-button value="yes"
+              ><mat-icon>check</mat-icon></mat-radio-button
+            >
+
+            <mat-radio-button value="No"
+              ><mat-icon>cancel</mat-icon></mat-radio-button
+            >
+          </mat-radio-group>
+
+          <div>
+            <button
+              class="primary"
+              style="
+                background-color: rgb(81, 79, 79);
+                width: 100%;
+                margin-bottom: 0.5em;
+              "
+              onclick="alert('Are you sure you want to move to Step-3')"
+              mat-button
+              matStepperNext
+            >
+              Next
+            </button>
+
+            <button
+              class="primary"
+              style="background-color: rgb(131, 95, 120); width: 100%"
+              mat-button
+              matStepperPrevious
+            >
+              Previous
+            </button>
+
+            <br />
+          </div>
+        </div>
+      </div>
+    </form>
+  </mat-step>
+
+  <mat-step [stepControl]="communicationFormGroup">
+    <form [formGroup]="communicationFormGroup" (ngSubmit)="onSubmit()">
+      <div class="container3">
+        <ng-template matStepLabel>Communication Address</ng-template>
+
+        <br />
+
+        <br />
+
+        <mat-form-field>
+          <mat-label>Present Address</mat-label>
+
+          <mat-icon matPrefix>location_on</mat-icon>
+
+          <input
+            matInput
+            placeholder="Present Address"
+            [formControl]="address"
+            formControlName="presentadd"
+            required
+            maxlength="60 characters"
+          />
+
+          <mat-hint align="start">Max 60 characters</mat-hint>
+
+          <mat-hint align="end">{{ address.value?.length || 0 }}/60</mat-hint>
+
+          <mat-error>Maximum 60 characters only</mat-error>
+        </mat-form-field>
+
+        <br />
+
+        <br />
+
+        <mat-form-field>
+          <mat-label>Permanent Address</mat-label>
+
+          <mat-icon matPrefix>home</mat-icon>
+
+          <input
+            matInput
+            placeholder="Pemanent Address"
+            [formControl]="address"
+            formControlName="permanentadd"
+            required
+            maxlength="60 characters"
+          />
+
+          <mat-hint align="start">Max 60 characters</mat-hint>
+
+          <mat-hint align="end">{{ address.value?.length || 0 }}/60</mat-hint>
+
+          <mat-error>Maximum 60 characters only</mat-error>
+        </mat-form-field>
+
+        <div>
+          <button
+            class="primary"
+            style="
+              background-color: rgb(81, 79, 79);
+              width: 100%;
+              margin-bottom: 0.5em;
+            "
+            onclick="alert('Are you sure you want to move to Step-4')"
+            mat-button
+            matStepperNext
+          >
+            Next
+          </button>
+
+          <button
+            class="primary"
+            style="background-color: rgb(131, 95, 120); width: 100%"
+            mat-button
+            matStepperPrevious
+          >
+            Previous
+          </button>
+
+          <br />
+        </div>
+      </div>
+    </form>
+  </mat-step>
+
+  <mat-step label="Done">
+    <h1
+      style="
+        font-family: serif;
+        font-size: 35px;
+        text-align: center;
+        color: rgb(125, 56, 56);
+        background-color: rgb(218, 243, 220);
+        height: 45px;
+        padding-top: 0.5em;
+      "
+    >
+      Registeration Successfull
+    </h1>
+
+    <br /><br />
+
+    <button
+      class="primary"
+      style="
+        background-color: rgb(131, 95, 120);
+        width: 100%;
+        margin-bottom: 0.5em;
+      "
+      onclick="alert('Are you sure you want to go back ?')"
+      mat-button
+      matStepperPrevious
+    >
+      Go Back To Form
+    </button>
+  </mat-step>
+</mat-horizontal-stepper>
